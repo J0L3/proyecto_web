@@ -1,0 +1,28 @@
+.color-primary-0 { color: #0E1E25 }	/* Color Principal */
+.color-primary-1 { color: #050B0E }   
+.color-primary-2 { color: #021117 }
+.color-primary-3 { color: #1f3d4a }
+.color-primary-4 { color: #1F3D4A }
+
+.color-secondary-1-0 { color: #3B3014 }	/* Main Secondary color (1) */
+.color-secondary-1-1 { color: #161208 }
+.color-secondary-1-2 { color: #231F15 }
+.color-secondary-1-3 { color: #75612E }
+.color-secondary-1-4 { color: #75612E }
+
+.color-secondary-2-0 { color: #3B1C14 }	/* Main Secondary color (2) */
+.color-secondary-2-1 { color: #160A08 }
+.color-secondary-2-2 { color: #231815 }
+.color-secondary-2-3 { color: #753B2E }
+.color-secondary-2-4 { color: #753B2E }
+
+body{
+    background: linear-gradient(#0E1E25, #050B0E);
+    min-height: 1000px;
+}
+
+#container{
+    margin: 0 auto;
+    width: 90%;
+    background-color: #fff;
+}
