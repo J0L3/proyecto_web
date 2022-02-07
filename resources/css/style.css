@@ -30,32 +30,27 @@ body{
 header{
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 header h1{
     color: #fff;
     font-size: 2em;
-    width: 70%;
 }
 
 #users{
-    background-color: #fff;
-    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    width: 12%;
 }
 
 .btn{
     text-decoration: none;
-    background-color: #1F3D4A ;
     color: #fff;
     border-radius: 12px;
     font-size: large;
     padding: 1%;
-}
-
-#btn:active{
-    
 }
 
 #avatar{
@@ -83,25 +78,40 @@ nav a:hover{
 
 /*Cuerpo*/
 #content {
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-
+    width: 100%;
 }
 
 article{
+    width: 100%;
     background-color: #0E1E25;
     border-radius: 12px;
     color: #fff;
     margin-bottom: 20px;
     /*box-shadow:0px 0px 10px 0px #050B0E;*/
+}
 
-    
+aside{
+    background-color: #0E1E25;
+    border-radius: 12px;
+    color: #fff;
+    margin-bottom: 20px;
+    /*box-shadow:0px 0px 10px 0px #050B0E;*/
 }
 
 section{
     padding: 3%;
 }
+/*Form*/
+#cuerpoform {
+    margin: 0 auto;
+    width: 75%;
+    height: 100%;
+    background-color: #393E46;
+    border-radius: 15px;
+    box-shadow: 0 0 40px -10px #000;
+
+}
+
 /*Footer*/
 footer{
     background-color: #021117;
@@ -115,4 +125,12 @@ hr{
     border: 0; 
     border-top: 1px solid #0E1E25;
     margin-bottom: 4%;
+}
+
+.principal{
+    width: 60%;
+}
+
+.secundario{
+    width: 25%;
 }
