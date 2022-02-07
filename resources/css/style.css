@@ -17,7 +17,8 @@
 .color-secondary-2-4 { color: #753B2E }
 
 body{
-    background-color: #050B0E;
+    background: rgb(2,17,23);
+    background: linear-gradient(0deg, rgba(2,17,23,1) 75%, rgba(14,30,37,1) 100%);
 }
 
 #container{
@@ -92,7 +93,10 @@ article{
     background-color: #0E1E25;
     border-radius: 12px;
     color: #fff;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    /*box-shadow:0px 0px 10px 0px #050B0E;*/
+
+    
 }
 
 section{
