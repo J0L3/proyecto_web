@@ -22,15 +22,15 @@
                     <label><span id="errorEmail">* </span>E-mail:</label>
                     <input type="text" name="email" value="<?php if (isset($_POST['email'])){ echo $_POST['email'];}?>" placeholder="Tuemail@dominio.com">
                 </p>
-                <javascript type="text/javascript" src="./resources/js/tools_SignUp.js"></script>
+
                 <p>
                     <label><span id="errorFecha">* </span>Fecha de nacimiento:</label>
-                    <input type="date" name="fechaNacimiento" value="<?php if (isset($_POST['fechaNacimiento'])){ echo $_POST['fechaNacimiento'];} ?>">
+                    <input type="date" name="fechaNacimiento" value="<?php if (isset($_POST['fechaNacimiento'])){echo $_POST['fechaNacimiento'];} ?>">
                 </p>
 
                 <p>
                     <label><span id="errorUsuario">* </span>Usuario:</label>
-                    <input type="text" name="username" value="<?php if (isset($_POST['user'])){ echo $_POST['user'];} ?>">
+                    <input type="text" name="username" value="<?php if (isset($_POST['username'])){ echo $_POST['username'];} ?>">
                 </p>
 
                 <p>
@@ -40,7 +40,7 @@
 
                 <p>
                     <label><span id="errorPass">* </span>Confirmar contraseña:</label>
-                    <input type="password" name="passVer" id="">
+                    <input type="password" name="passver" id="">
                 </p>    
 
                 <p>
@@ -56,7 +56,7 @@
 
 <?php
     if (isset($_POST['enviar'])){
-        if (!empty($_POST['email'])||!empty($_POST['fechaNacimiento'])||!empty($_POST['user'])||!empty($_POST['pass'])||!empty($_POST['passVer'])){ 
+        if (!empty($_POST['email'])||!empty($_POST['fechaNacimiento'])||!empty($_POST['username'])||!empty($_POST['pass'])||!empty($_POST['passVer'])){ 
 
             if (valid_email($_POST['email'])) {
               echo "Ok EMAIL";  
@@ -65,6 +65,19 @@
             if (valid_username($_POST['username'])){
                 echo "<br>OK user";
             }
+
+            if (valid_age($_POST['fechaNacimiento'])){
+                "<br>OK age";
+            }
+
+            if(valid_pass($_POST['pass'],$_POST['passver'])){ 
+                echo 'Ok';
+            }
+
+            if(registrar($_POST['username'],$_POST['pass'],$_POST['email'],$_POST['fechaNacimiento'])){ 
+                header('Location: index.php');
+            }
+            
         }
     }
 ?>
