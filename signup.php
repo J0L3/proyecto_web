@@ -19,7 +19,7 @@
             <hr>
             <form action="" method="POST">
                 <p>
-                    <label><span id="errorEmail">* </span>E-mail:</label>
+                    <label><span class="errorEmail">* </span>E-mail:</label>
                     <input type="text" name="email" value="<?php if (isset($_POST['email'])){ echo $_POST['email'];}?>" placeholder="Tuemail@dominio.com">
                 </p>
 
@@ -47,37 +47,41 @@
                     <input type="submit" value="Enviar" name="enviar" id="btn">
                     <a href="./index.php"><input type="button" value="Cancelar" id="btn"></a>
                 </p>
-                
             </form>
         </div>
+        <p id="errores"></p>
     </div>
 </body>
 </html>
 
 <?php
     if (isset($_POST['enviar'])){
-        if (!empty($_POST['email'])||!empty($_POST['fechaNacimiento'])||!empty($_POST['username'])||!empty($_POST['pass'])||!empty($_POST['passVer'])){ 
+        if (!empty($_POST['email'])&&!empty($_POST['fechaNacimiento'])&&!empty($_POST['username'])&&!empty($_POST['pass'])&&!empty($_POST['passver'])){ 
 
+            $i=0; //Verificar que se comprobo todo correctamente
             if (valid_email($_POST['email'])) {
-              echo "Ok EMAIL";  
-            } 
+                $i++;  
+            }
 
             if (valid_username($_POST['username'])){
-                echo "<br>OK user";
+                $i++;
             }
 
             if (valid_age($_POST['fechaNacimiento'])){
-                "<br>OK age";
-            }
+                $i++;
+            } 
 
             if(valid_pass($_POST['pass'],$_POST['passver'])){ 
-                echo 'Ok';
+                $i++;
             }
 
-            if(registrar($_POST['username'],$_POST['pass'],$_POST['email'],$_POST['fechaNacimiento'])){ 
+            if($i==4){ 
+                registrar($_POST['username'],$_POST['pass'],$_POST['email'],$_POST['fechaNacimiento']);
                 header('Location: index.php');
             }
             
+        } else { 
+            echo '<script language="javascript">errores.innerHTML = "Rellena todos los campos";</script>';
         }
     }
 ?>

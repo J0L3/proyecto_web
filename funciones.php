@@ -4,7 +4,7 @@
     //Validar E-mail Registro
     function valid_email($mail){
       GLOBAL $nombreBD, $conexion;
-
+      
       if (false !== filter_var($mail, FILTER_VALIDATE_EMAIL)) { //Comprobamos que el email sea valido
         
         //Selecionamos la base de datos
@@ -13,12 +13,13 @@
         $sql = "SELECT email FROM usuarios WHERE email LIKE '$mail' ";
 
         if (mysqli_num_rows(mysqli_query($conexion,$sql))!=0) {//Si no es igual a 0 el correo ya esta registrado
-          echo "Esta registrado email";
+          echo '<script language="javascript">errores.innerHTML = "";</script>';;
         }
 
       } else {
         echo "email no valido";
       }
+
 
     }
 
@@ -28,8 +29,10 @@
       $nuevaFecha = date ('Y-m-d', strtotime ('+18 year' , strtotime($fechaN))); //Sumamos al nacimiento 18 años
 
       if ($today >= $nuevaFecha){//Si el dia de hoy es mayor que la nueva fecha tiene +18años
-        echo "Mayor de edad";
+        $verified='true';
       }
+
+      return $verified;
 
     }
 
