@@ -44,10 +44,10 @@
                 </section>  
             </article>
         </div>
-
-        <footer>
-            <p>Cosas</p>
-        </footer>
     </div>
+    
+    <footer>
+            <p>Cosas</p>
+    </footer>
 </body>
 </html>

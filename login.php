@@ -11,6 +11,7 @@
     <div id="container">
         <div id="cuerpoform">
             <h3 id="titleform">Login</h3>
+            <hr>
             <form action="" method="POST">
                 <p>
                     <label>Usuario:</label>

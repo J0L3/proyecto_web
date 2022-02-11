@@ -2,16 +2,18 @@
     $servidor = "localhost";
     $usuario = "root";
     $pass = "";
-    $nombreBD="tft";
+    $nombreBD="bd1";
 
     $conexion = mysqli_connect($servidor,$usuario,$pass) or die("Error de conexión");
 
     /*  Crear las tablas para la comprobación del ejercicio
         CREATE TABLE usuarios ( id int(2) AUTO_INCREMENT,
-                                nombre varchar(255),
-                                apellidos varchar(255),
-                                edad int(2),
-                                direccion varchar(255), 
-                                PRIMARY KEY (ID,nombre));
+                                usuario varchar(10) NOT NULL,
+                                pass varchar(40) NOT NULL,
+                                email varchar(255) NOT NULL,
+                                fecha varchar(255)NOT NULL, 
+                                PRIMARY KEY (ID));
     */  
+
+    //INSERT INTO usuarios VALUES(0,'usuario',SHA('contraseña'),'email','fecha');
 ?>
