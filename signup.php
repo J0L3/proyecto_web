@@ -30,7 +30,7 @@
 
                 <p>
                     <label><span id="errorUsuario">* </span>Usuario:</label>
-                    <input type="text" name="user" value="<?php if (isset($_POST['user'])){ echo $_POST['user'];} ?>">
+                    <input type="text" name="username" value="<?php if (isset($_POST['user'])){ echo $_POST['user'];} ?>">
                 </p>
 
                 <p>
@@ -62,6 +62,9 @@
               echo "Ok EMAIL";  
             } 
 
+            if (valid_username($_POST['username'])){
+                echo "<br>OK user";
+            }
         }
     }
 ?>

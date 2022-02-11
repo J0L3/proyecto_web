@@ -25,8 +25,38 @@
     }
 
     //validar usuario Registro
-    function valid_username($username) {
-      
+    function valid_username($username){
+      $permitidos="/^[a-zA-Z0-9]+$/";
+
+      //Comprobra longitud del nombre de usuario
+      if (strlen($username)>=4 && strlen($username)<=10){
+
+        //Comprobar los caracteres del usuario
+        if (preg_match($permitidos, $username)){
+          echo "El nombre de usuario es correcto";
+        }else{
+          echo "Caracteres invalidos";
+        }
+
+      } else {
+        echo "Longitud del usuario entre 4 y 10 caracteres";
+      }
+    }
+
+    //Comprobar que las contraseña sea valida
+    function valid_pass($pass,$passver){
+      //Entre 8  y 18 caracteres
+    }
+
+    //Registrar usuario
+    function registrar($username,$pass,$mail,$fecha){
+      GLOBAL $nombreBD, $conexion;
+      //Selecionamos la base de datos
+      mysqli_select_db($conexion,$nombreBD);
+      //Insertamos el usuario
+      $sql="INSERT INTO usuarios VALUES(0,'$username',SHA('$pass'),'$mail','$fecha');";
+
+      return mysqli_query($conexion,$sql);
     }
 
 ?>
