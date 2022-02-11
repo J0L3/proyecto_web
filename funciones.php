@@ -96,4 +96,17 @@
       return mysqli_query($conexion,$sql);
     }
 
+    //Verificar login
+    function valid_login($username,$pass){
+      GLOBAL $nombreBD, $conexion;
+      //Selecionamos la base de datos
+      mysqli_select_db($conexion,$nombreBD);
+      //Comprobamos que el usuario este en la base de datos
+      $sql = "SELECT username FROM usuarios WHERE username LIKE '$username' ";
+
+      if (mysqli_num_rows(mysqli_query($conexion,$sql))!=0) {//Comprobar si el usuario esta en uso
+        echo "Esta registrado";
+      }
+    }
+
 ?>

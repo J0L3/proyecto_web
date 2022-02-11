@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="">
     <title>Inicio</title>
 </head>
 <body>
@@ -21,6 +21,11 @@
                 <p>
                     <label>Contraseña:</label>
                     <input type="password" name="pass" id="">
+                </p>
+
+                <p>
+                    <label>Mantener sesion iniciada</label>
+                    <input type="checkbox" name="sesion" id="">
                 </p>
 
                 <p>
