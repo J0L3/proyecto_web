@@ -22,6 +22,17 @@
 
     }
 
+    //Validar edad >18años
+    function valid_age($fechaN) {
+      $today= date("Y-m-d"); //Fecha de hoy
+      $nuevaFecha = date ('Y-m-d', strtotime ('+18 year' , strtotime($fechaN))); //Sumamos al nacimiento 18 años
+
+      if ($today >= $nuevaFecha){//Si el dia de hoy es mayor que la nueva fecha tiene +18años
+        echo "Mayor de edad";
+      }
+
+    }
+
     //validar usuario Registro
     function valid_username($username){
       GLOBAL $nombreBD, $conexion;
@@ -58,6 +69,15 @@
     //Comprobar que las contraseña sea valida
     function valid_pass($pass,$passver){
       //Entre 8  y 18 caracteres
+      if (strlen($pass)>=8 && strlen($pass)<=18){
+        if($pass!=$passver){
+          echo 'Contraseñas diferentes';
+        }   
+
+      }else{
+        echo 'Contraseña entre 8 y 18 caracteres';
+      }
+
     }
 
     //Registrar usuario
@@ -65,8 +85,10 @@
       GLOBAL $nombreBD, $conexion;
       //Selecionamos la base de datos
       mysqli_select_db($conexion,$nombreBD);
+      //Encriptamos contraseña
+      $pass=password_hash($pass, PASSWORD_DEFAULT, ['cost' => 15]);
       //Insertamos el usuario
-      $sql="INSERT INTO usuarios VALUES(0,'$username',SHA('$pass'),'$mail','$fecha');";
+      $sql="INSERT INTO usuarios VALUES(0,'$username','$pass','$mail','$fecha');";
 
       return mysqli_query($conexion,$sql);
     }
