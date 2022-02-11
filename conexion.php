@@ -8,7 +8,7 @@
 
     /*  Crear las tablas para la comprobación del ejercicio
         CREATE TABLE usuarios ( id int(2) AUTO_INCREMENT,
-                                usuario varchar(10) NOT NULL,
+                                username varchar(10) NOT NULL,
                                 pass varchar(40) NOT NULL,
                                 email varchar(255) NOT NULL,
                                 fecha varchar(255)NOT NULL, 
