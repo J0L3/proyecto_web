@@ -77,7 +77,9 @@
 
             if($i==4){ 
                 registrar($_POST['username'],$_POST['pass'],$_POST['email'],$_POST['fechaNacimiento']);
-                header('Location: index.php');
+                header('Location: login.php');
+            } else {
+                echo 'error';
             }
             
         } else { 

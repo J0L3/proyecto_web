@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include 'funciones.php'
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,7 +19,7 @@
             <form action="" method="POST">
                 <p>
                     <label>Usuario:</label>
-                    <input type="text" name="user" value="">
+                    <input type="text" name="username" value="">
                 </p>
 
                 <p>
@@ -29,7 +33,7 @@
                 </p>
 
                 <p>
-                    <input type="submit" value="Enviar" name="enviar" id="btn">
+                    <input type="submit" value="Login" name="enviar" id="btn">
                     <a href="./index.php"><input type="button" value="Cancelar" id="btn"></a>
                 </p>
             </form>
@@ -37,3 +41,15 @@
     </div>
 </body>
 </html>
+
+<?php
+    if (isset($_POST['enviar'])){
+        if (!empty($_POST['username'])&&!empty($_POST['pass'])){ 
+
+            if (valid_login($_POST['username'],$_POST['pass'])) {
+                echo 'ok';
+            }
+
+        }
+    }
+?>

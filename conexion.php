@@ -12,6 +12,7 @@
                                 pass varchar(60) NOT NULL,
                                 email varchar(255) NOT NULL,
                                 fecha varchar(255)NOT NULL, 
-                                PRIMARY KEY (ID));
+                                PRIMARY KEY (id),
+                                UNIQUE (username,email));
     */  
 ?>
