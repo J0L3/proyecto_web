@@ -15,9 +15,12 @@
 
         if (mysqli_num_rows(mysqli_query($conexion,$sql))==0) {//Si no es igual a 0 el correo ya esta registrado
           $verified=true;
+        }else{
+          echo '<script language="javascript">errores.innerHTML = errores.innerHTML+"El email se encuentra registrado<br>";</script>';
+
         }
       }else{
-        echo "email no valido";
+        echo '<script language="javascript">errores.innerHTML = errores.innerHTML+"El email no es válido<br>";</script>';
       }
 
       return $verified;
@@ -31,6 +34,9 @@
 
       if($today >= $nuevaFecha){//Si el dia de hoy es mayor que la nueva fecha tiene +18años
         $verified=true;
+      }else{
+        echo '<script language="javascript">errores.innerHTML = errores.innerHTML+"Debe ser mayor de edad<br>";</script>';
+
       }
 
       return $verified;
@@ -55,14 +61,17 @@
 
             if (mysqli_num_rows(mysqli_query($conexion,$sql))==0) {//Comprobar si el usuario esta en uso
               $verified=true;
+            } else{
+              echo '<script language="javascript">errores.innerHTML = errores.innerHTML+"El usuario esta en uso<br>";</script>';
+
             }
 
         }else{
-          echo "Caracteres invalidos";
+          echo '<script language="javascript">errores.innerHTML = errores.innerHTML+"El usuario solo puede contener caracteres alfanúmericos<br>";</script>';
         }
 
       } else {
-        echo "Longitud del usuario entre 4 y 10 caracteres";
+        echo '<script language="javascript">errores.innerHTML = errores.innerHTML+"Longitud del usuario entre 4 y 10 caracteres";</script>';
       }
       return $verified;
     }
@@ -75,9 +84,11 @@
         //Comprobamos que las contraseñas sean iguales
         if($pass==$passver){
           $verified=true;
-        }   
+        }else {
+          echo '<script language="javascript">errores.innerHTML = errores.innerHTML+"Contraseñas diferentes<br>";</script>';
+        }
       }else{
-        echo 'Contraseña entre 8 y 18 caracteres';
+        echo '<script language="javascript">errores.innerHTML = errores.innerHTML+"Contraseña entre 8 y 18 caracteres";</script>';
       }
       
       return $verified;

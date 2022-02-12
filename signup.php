@@ -78,12 +78,10 @@
             if($i==4){ 
                 registrar($_POST['username'],$_POST['pass'],$_POST['email'],$_POST['fechaNacimiento']);
                 header('Location: login.php');
-            } else {
-                echo 'error';
             }
             
         } else { 
-            echo '<script language="javascript">errores.innerHTML = "Rellena todos los campos";</script>';
+            echo '<script language="javascript">errores.innerHTML = "Rellene todos los campos";</script>';
         }
     }
 ?>
