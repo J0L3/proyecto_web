@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include 'funciones.php';
+    include './resources/php/funciones_signup.php';
 ?>
 
 <!DOCTYPE html>
