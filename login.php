@@ -45,7 +45,7 @@
                     <input type="submit" value="Login" name="enviar" id="btn">
                     <a href="./index.php"><input type="button" value="Cancelar" id="btn"></a>
                 </p>
-                <p class="forgot"><a href="#">¿Olvidastes la contraseña?</a></p>
+                <p class="createaccount">¿Aún no tienes cuenta? <a href="./signup.php">Click aqui</a></p>
             </form>
         </div>
         <div id="errores"></div>
