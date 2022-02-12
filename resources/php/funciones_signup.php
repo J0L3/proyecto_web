@@ -1,5 +1,5 @@
 <?php
-  include './conexion.php';
+  include 'conexion.php';
 
   //Validar E-mail Registro
   function valid_email($mail){

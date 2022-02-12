@@ -1,7 +1,16 @@
 <?php
     session_start();
-    include 'funciones.php'
+    include './resources/php/funciones_login.php';
+
+    
+    if (isset($_COOKIE['MANTENERSESION'])) {
+        if (valid_login($_COOKIE['MANTENERSESION']['username'], $_COOKIE['MANTENERSESION']['pass'])) {
+            $_SESSION['username']=$_COOKIE['MANTENERSESION']['username'];
+            header('Location: index.php');
+        }
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,27 +38,40 @@
 
                 <p>
                     <label>Mantener sesion iniciada</label>
-                    <input type="checkbox" name="sesion" id="">
+                    <input type="checkbox" name="mantenersesion" id="">
                 </p>
 
                 <p>
                     <input type="submit" value="Login" name="enviar" id="btn">
                     <a href="./index.php"><input type="button" value="Cancelar" id="btn"></a>
                 </p>
+                <p class="forgot"><a href="#">¿Olvidastes la contraseña?</a></p>
             </form>
         </div>
+        <div id="errores"></div>
     </div>
 </body>
 </html>
 
 <?php
+
     if (isset($_POST['enviar'])){
         if (!empty($_POST['username'])&&!empty($_POST['pass'])){ 
 
             if (valid_login($_POST['username'],$_POST['pass'])) {
-                echo 'ok';
+
+                if(isset($_POST['mantenersesion'])){//Creamos cookie para mantener sesion activa
+                    mantener_session($_POST['username'],$_POST['pass']);
+                }
+                $_SESSION['username'] = $_POST['username'];
+                header('Location: index.php');
+
+            }else{
+                echo '<script language="javascript">errores.innerHTML = "El usuario o la contraseña no es válido";</script>';
             }
 
+        } else {
+            echo '<script language="javascript">errores.innerHTML = "El usuario o la contraseña no es válido";</script>';
         }
     }
 ?>

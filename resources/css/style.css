@@ -38,6 +38,10 @@ header h1{
     color: #fff;
     font-size: 2em;
 }
+header h1 a{
+    text-decoration: none;
+    color: #fff;
+}
 
 #users{
     display: flex;

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,17 +14,25 @@
 <body>
     <div id="container">
         <header>
-            <h1 id="titulo">TEFETES</h1>
+            <h1 id="titulo"><a href="./index.php">TEFETES</a></h1>
             <p id="users">
-                <a href="./signup.php" class="btn">Registro</a>
-                <a href="./login.php" class="btn">Login</a>
+            <?php
+                if(isset($_SESSION['username'])){
+            ?>
+                <a href="./logout.php" class="btn">Logout</a>
+                <a href="#" class="btn">Perfil</a>
+            <?php
+                }else{
+                    echo '<a href="./signup.php" class="btn">Registro</a> <a href="./login.php" class="btn">Login</a>';
+                }
+            ?>
+                
             </p>
         </header>
         <hr>
         <nav>
             <a href="#">Inicio</a>
             <a href="#">Algo</a>
-            <a href="#">Perfil</a>
             <a href="#">Contacto</a>
         </nav>
 

@@ -49,7 +49,7 @@
                 </p>
             </form>
         </div>
-        <p id="errores"></p>
+        <div id="errores"></div>
     </div>
 </body>
 </html>
