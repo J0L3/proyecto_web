@@ -17,15 +17,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="resources/css/forms.css">
     <title>Inicio</title>
 </head>
 <body>
     <div id="container">
-        <div id="cuerpoform">
-            <h3 id="titleform">Login</h3>
+        <header>
+            <h1 id="titleform">Login</h1>
             <hr>
+        </header>
+        <?php if (isset($_POST['enviar'])){ echo '<div id="errores"></div>';}//Recuadro con errores?> 
+        <div id="cuerpoform">
+            
             <form action="" method="POST">
+           
                 <p>
                     <label>Usuario:</label>
                     <input type="text" name="username" value="">
@@ -37,18 +42,21 @@
                 </p>
 
                 <p>
-                    <label>Mantener sesion iniciada</label>
-                    <input type="checkbox" name="mantenersesion" id="">
+                    <label id="sesion">Mantener sesión iniciada:</label><input type="checkbox" name="mantenersesion" id="">
+                    
                 </p>
 
                 <p>
                     <input type="submit" value="Login" name="enviar" id="btn">
                     <a href="./index.php"><input type="button" value="Cancelar" id="btn"></a>
                 </p>
-                <p class="createaccount">¿Aún no tienes cuenta? <a href="./signup.php">Click aqui</a></p>
+
+                <p id="createaccount">
+                    <label>¿Aún no tienes cuenta? <a href="./signup.php">Click aqui</a></label>
+                </p>
+
             </form>
         </div>
-        <div id="errores"></div>
     </div>
 </body>
 </html>

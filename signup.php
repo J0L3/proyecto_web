@@ -9,14 +9,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/forms.css">
     <title>Sign Up</title>
 </head>
 <body>
     <div id="container">
-        <div id="cuerpoform">
-            <h3 id="titleform">Sign Up</h3>
+        <header>
+            <h1 id="titleform">Sign Up</h1>
             <hr>
+        </header>
+
+        <?php if (isset($_POST['enviar'])){ echo '<div id="errores"></div>';}//Recuadro con errores?> 
+
+        <div id="cuerpoform">
+            
             <form action="" method="POST">
                 <p>
                     <label><span class="errorEmail">* </span>E-mail:</label>
@@ -44,12 +50,15 @@
                 </p>    
 
                 <p>
-                    <input type="submit" value="Enviar" name="enviar" id="btn">
+                    <input type="submit" value="Registrar" name="enviar" id="btn">
                     <a href="./index.php"><input type="button" value="Cancelar" id="btn"></a>
+                </p>
+                <p id="createaccount">
+                    <label>¿Ya tienes cuenta? <a href="./login.php">Click aqui</a></label>
                 </p>
             </form>
         </div>
-        <div id="errores"></div>
+
     </div>
 </body>
 </html>
