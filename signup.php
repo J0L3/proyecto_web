@@ -52,7 +52,7 @@
 
                 <p>
                     <input type="submit" value="Registrar" name="enviar" id="btn">
-                    <a href="./index.php"><input type="button" value="Inicio" id="btn"></a>
+                    <a href="./index.php"><input type="button" value="Ir al Inicio" id="btn"></a>
                 </p>
                 <p id="createaccount">
                     <label>¿Ya tienes cuenta? <a href="./login.php">Click aqui</a></label>
