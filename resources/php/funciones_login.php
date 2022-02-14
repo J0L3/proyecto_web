@@ -1,5 +1,6 @@
 <?php
   include 'conexion.php';
+  
   //Verificar login
   function valid_login($username,$pass){
     GLOBAL $nombreBD, $conexion;
@@ -38,4 +39,7 @@
     setcookie("MANTENERSESION[pass]", $pass, time()+2629800);
   }
 
+  function hasta_cerrar_navegador(){
+    setcookie("COOKIE_CERRAR_NAVEGADOR", TRUE, 0);
+  }
 ?>

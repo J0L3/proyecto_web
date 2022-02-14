@@ -16,19 +16,20 @@
     <div id="container">
         <header>
             <h1 id="titulo"><a href="./index.php">TEFETES</a></h1>
-            <p id="users">
-            <?php
-                if(isset($_SESSION['username'])){
-            ?>
-                <a href="./logout.php" class="btn">Logout</a>
-                <a href="#" class="btn">Perfil</a>
-            <?php
-                }else{
-                    echo '<a href="./signup.php" class="btn">Registro</a> <a href="./login.php" class="btn">Login</a>';
-                }
-            ?>
+
+            <div id="users">
+                <?php
+                    if(isset($_SESSION['username'])){
+                ?>
+                    <a href="./logout.php" class="btn">Logout</a>
+                    <a href="#" class="btn">Perfil</a>
+                <?php
+                    }else{
+                        echo '<a href="./signup.php" class="btn">Registro</a> <a href="./login.php" class="btn">Login</a>';
+                    }
+                ?>
                 
-            </p>
+            </div>
         </header>
         <hr>
         <nav>

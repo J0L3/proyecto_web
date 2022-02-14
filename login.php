@@ -4,9 +4,10 @@
 
     
     if (isset($_COOKIE['MANTENERSESION'])) {
-        if (valid_login($_COOKIE['MANTENERSESION']['username'], $_COOKIE['MANTENERSESION']['pass'])) {
-            $_SESSION['username']=$_COOKIE['MANTENERSESION']['username'];
-            header('Location: index.php');
+        if ($_COOKIE['MANTENERSESION']){
+            if (valid_login($_COOKIE['MANTENERSESION']['username'], $_COOKIE['MANTENERSESION']['pass'])) {
+                $_SESSION['username']=$_COOKIE['MANTENERSESION']['username'];
+                echo '<script language="javascript">window.location.replace("./index.php");</script>';            }
         }
     }
 ?>
@@ -71,9 +72,12 @@
 
                 if(isset($_POST['mantenersesion'])){//Creamos cookie para mantener sesion activa
                     mantener_session($_POST['username'],$_POST['pass']);
+                } else {
+                    hasta_cerrar_navegador();
                 }
                 $_SESSION['username'] = $_POST['username'];
-                header('Location: index.php');
+
+                echo '<script language="javascript">window.location.replace("./index.php");</script>';
 
             }else{
                 echo '<script language="javascript">errores.innerHTML = "El usuario o la contraseña no es válido";</script>';
