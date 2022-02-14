@@ -27,7 +27,7 @@
             <form action="" method="POST">
                 <p>
                     <label><span class="errorEmail">* </span>E-mail:</label>
-                    <input type="text" name="email" value="<?php if (isset($_POST['email'])){ echo $_POST['email'];}?>" placeholder="Tuemail@dominio.com">
+                    <input type="text" name="email" value="<?php if (isset($_POST['email'])){ echo $_POST['email'];}?>">
                 </p>
 
                 <p>
@@ -52,7 +52,7 @@
 
                 <p>
                     <input type="submit" value="Registrar" name="enviar" id="btn">
-                    <a href="./index.php"><input type="button" value="Cancelar" id="btn"></a>
+                    <a href="./index.php"><input type="button" value="Inicio" id="btn"></a>
                 </p>
                 <p id="createaccount">
                     <label>¿Ya tienes cuenta? <a href="./login.php">Click aqui</a></label>

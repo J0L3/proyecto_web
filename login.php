@@ -44,13 +44,15 @@
                 </p>
 
                 <p>
-                    <label id="sesion">Mantener sesión iniciada:</label><input type="checkbox" name="mantenersesion" id="">
-                    
+                    <label id="sesion" class="form-control">
+                        <input type="checkbox" name="mantenersesion">
+                        Mantener sesión activa
+                    </label>
                 </p>
 
                 <p>
                     <input type="submit" value="Login" name="enviar" id="btn">
-                    <a href="./index.php"><input type="button" value="Cancelar" id="btn"></a>
+                    <a href="./index.php"><input type="button" value="Inicio" id="btn"></a>
                 </p>
 
                 <p id="createaccount">

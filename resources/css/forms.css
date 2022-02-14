@@ -44,6 +44,7 @@ form {
 
 input {
     width: 100%;
+    color: #e0e0e0;
     padding: 2%;
     box-sizing: border-box;
     background: none;
@@ -59,11 +60,39 @@ input:focus {
     border-bottom: 2px solid #75612E;   
 }
 
-input[type='checkbox']{
-    cursor: pointer;
-    color: #e0e0e0;
-    width:5%;
+/*Checkbox*/
+.form-control {
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
 }
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    border: 2px solid #1f3d4a;
+    border-radius: 0.15em;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms;
+    box-shadow: inset 1em 1em #1f3d4a;
+    
+}
+  
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+/**/
 
 #btn{
     margin-top: 2%;
@@ -80,17 +109,12 @@ label {
     margin: 2% 0 0;
     font-size: 14px;
 }
-#sesion{
-    display: inline-block;
-    margin: 4% 0 10% 0;
-    font-size: 14px;
-}
+
 #createaccount {
     margin: 5% 0 0;
 }
 
 a{
-
     color: #e0e0e0;
 }
 
