@@ -94,6 +94,11 @@ article{
     /*box-shadow:0px 0px 10px 0px #050B0E;*/
 }
 
+#img_promocion{
+    display: flex;
+    width: 100%;
+}
+
 aside{
     background-color: #0E1E25;
     border-radius: 12px;
