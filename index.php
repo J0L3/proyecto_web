@@ -21,11 +21,11 @@
                 <?php
                     if(isset($_SESSION['username'])){
                 ?>
-                    <a href="./logout.php" class="btn">Logout</a>
+                    <a href="./logout.php" class="btn">Desconectar</a>
                     <a href="./perfil.php" class="btn">Perfil</a>
                 <?php
                     }else{
-                        echo '<a href="./signup.php" class="btn">Registro</a> <a href="./login.php" class="btn">Login</a>';
+                        echo '<a href="./signup.php" class="btn">Registrarse</a> <a href="./login.php" class="btn">Iniciar Sesión</a>';
                     }
                 ?>
                 

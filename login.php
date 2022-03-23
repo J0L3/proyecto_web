@@ -25,7 +25,7 @@
 <body>
     <div id="container">
         <header>
-            <h1 id="titleform">Login</h1>
+            <h1 id="titleform">Iniciar sesión</h1>
             <hr>
         </header>
         <?php if (isset($_POST['enviar'])){ echo '<div id="errores"></div>';}//Recuadro con errores?> 

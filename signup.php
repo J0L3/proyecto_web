@@ -16,7 +16,7 @@
 <body>
     <div id="container">
         <header>
-            <h1 id="titleform">Sign Up</h1>
+            <h1 id="titleform">Registrarse</h1>
             <hr>
         </header>
 

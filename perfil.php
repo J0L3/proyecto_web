@@ -21,7 +21,7 @@
                 <?php
                     if(isset($_SESSION['username'])){
                 ?>
-                    <a href="./logout.php" class="btn">Logout</a>
+                    <a href="./logout.php" class="btn">Desconectar</a>
                     <a href="./perfil.php" class="btn">Perfil</a>
                 <?php
                     }else{
