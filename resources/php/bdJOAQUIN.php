@@ -9,14 +9,14 @@ mysqli_query($conexion,$crearBD);
 mysqli_select_db($conexion,$nombreBD);
 
 //Crear tabla clientes
-$crearTabla="CREATE TABLE IF NOT EXISTS clientes ( id_cliente int(20) AUTO_INCREMENT,
-                        usuario varchar(10) NOT NULL,
-                        pass varchar(60) NOT NULL,
-                        email varchar(255) NOT NULL,
-                        fecha varchar(255)NOT NULL,
-                        administracion boolean(1)NOT NULL, 
-                        PRIMARY KEY (id_cliente,username),
-                        UNIQUE (email));";
+$crearTabla="CREATE TABLE `bd1`.`clientes` ( `id_cliente` INT(20) NOT NULL , 
+`usuario` VARCHAR(10) NOT NULL , 
+`pass` VARCHAR(60) NOT NULL , 
+`email` VARCHAR(255) NOT NULL ,
+`fecha` VARCHAR(255) NOT NULL , 
+`administrador` BOOLEAN DEFAULT FALSE , 
+PRIMARY KEY (`id_cliente`, `usuario`), UNIQUE (`email`)) 
+ENGINE = InnoDB;";
 
 mysqli_query($conexion,$crearTabla);
 
