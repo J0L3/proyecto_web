@@ -9,7 +9,7 @@ mysqli_query($conexion,$crearBD);
 mysqli_select_db($conexion,$nombreBD);
 
 //Crear tabla clientes
-$crearTabla="CREATE TABLE `bd1`.`clientes` ( `id_cliente` INT(20) NOT NULL , 
+$crearTabla="CREATE TABLE `bd1`.`clientes` ( `id_cliente` INT(20) NOT NULL AUTO_INCREMENT, 
 `usuario` VARCHAR(10) NOT NULL , 
 `pass` VARCHAR(60) NOT NULL , 
 `email` VARCHAR(255) NOT NULL ,

@@ -11,7 +11,7 @@
       //Selecionamos la base de datos
       mysqli_select_db($conexion,$nombreBD);
       //Comprobamos que el email no este en la base de datos
-      $sql = "SELECT email FROM usuarios WHERE email LIKE '$mail' ";
+      $sql = "SELECT email FROM clientes WHERE email LIKE '$mail' ";
 
       if (mysqli_num_rows(mysqli_query($conexion,$sql))==0) {//Si no es igual a 0 el correo ya esta registrado
         $verified=true;
@@ -57,7 +57,7 @@
           //Selecionamos la base de datos
           mysqli_select_db($conexion,$nombreBD);
           //Comprobamos que el usuario no este en la base de datos
-          $sql = "SELECT username FROM usuarios WHERE username LIKE '$username' ";
+          $sql = "SELECT usuario FROM clientes WHERE usuario LIKE '$username' ";
 
           if (mysqli_num_rows(mysqli_query($conexion,$sql))==0) {//Comprobar si el usuario esta en uso
             $verified=true;
@@ -100,9 +100,9 @@
     //Selecionamos la base de datos
     mysqli_select_db($conexion,$nombreBD);
     //Encriptamos contraseña
-    $pass=password_hash($pass, PASSWORD_DEFAULT, ['cost' => 15]);
+    $pass=password_hash($pass, PASSWORD_DEFAULT, ['cost' => 10]);
     //Insertamos el usuario
-    $sql="INSERT INTO usuarios VALUES(0,'$username','$pass','$mail','$fecha');";
+    $sql="INSERT INTO clientes VALUES(0,'$username','$pass','$mail','$fecha',0);";
 
     return mysqli_query($conexion,$sql);
   }
