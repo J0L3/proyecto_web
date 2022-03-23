@@ -19,6 +19,7 @@
 body{
     background: rgb(2,17,23);
     background: linear-gradient(0deg, #050B0E 85%, #021117 85%);
+    font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
 }
 
 #container{
